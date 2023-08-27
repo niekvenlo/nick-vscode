@@ -1,18 +1,20 @@
 :root {
-  --ns-yellow: rgb(255, 201, 23);
+  --ns-yellow: 255, 201, 23;
   --ns-blue: rgb(0, 48, 130);
   --ns-light-blue: rgb(0, 99, 211);
   --ns-black: rgb(0, 0, 0);
   --ns-white: rgb(255, 255, 255);
 
-  --background: var(--ns-yellow);
+  --background: rgb(var(--ns-yellow));
   --highlight: var(--ns-blue);
+  --text: var(var(--ns-black));
+  --light-text: var(var(--ns-black));
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--ns-blue);
-    --highlight: var(--ns-yellow);
+    --highlight: rgb(var(--ns-yellow));
   }
   html {
     color-scheme: dark;
@@ -33,6 +35,7 @@ body {
 
 body {
   background: var(--background);
+  padding: 0.5em;
 }
 
 h2 {
@@ -42,4 +45,59 @@ h2 {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.results {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.results td {
+  padding-block: 1em;
+  padding-inline: 0.3em;
+}
+
+.results thead tr {
+  background: var(--highlight);
+  color: var(--background);
+}
+
+.results tbody tr:nth-of-type(2n) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.results .name {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.results .start {
+  opacity: 0.7;
+  font-size: 0.9em;
+}
+
+.results .end {
+}
+
+.results .no-wrap-cell {
+  width: 20%;
+  max-width: 20%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.results .no-topic {
+  opacity: 0.5;
+  font-style: italic;
+  font-size: 0.7em;
+}
+
+.results .topic-pill {
+  font-size: 0.8em;
+  padding-block: 0.1em;
+  padding-inline: 0.4em;
+  margin: 0.1em;
+  border-radius: 0.4em;
 }
