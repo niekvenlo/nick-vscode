@@ -40,11 +40,82 @@ body {
 
 h2 {
   color: var(--highlight);
+  padding-block: 0.6em;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+  width: auto;
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  padding-block-end: 1em;
+}
+
+.searching {
+  display: flex;
+  gap: 1em;
+}
+
+.number-of-results {
+  font-size: 0.9em;
+}
+
+.history-button {
+  border-bottom: 1px solid var(--ns-light-blue);
+  padding-inline: 1em;
+}
+
+.history-is-open {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background: var(--highlight);
+  color: var(--background);
+  padding: 3em;
+  border-radius: 1em;
+  border: 1px solid var(--background);
+  z-index: 1;
+}
+
+.history-is-open .close {
+  display: flex;
+  justify-content: end;
+  padding-block-end: 1em;
+}
+
+.history-is-open button {
+  display: block;
+}
+.history-is-open h3 {
+  padding-block-end: 0.5em;
+}
+
+.history-is-closed {
+  display: none;
+}
+
+.rate-limit-exceeded {
+  display: flex;
+  align-items: center;
+  height: 400px;
+  font-size: 2em;
+  justify-content: center;
 }
 
 .results {
@@ -88,13 +159,15 @@ a {
   white-space: nowrap;
 }
 
-.results .no-topic {
+.results .no-topic,
+.results .no-language {
   opacity: 0.5;
   font-style: italic;
   font-size: 0.7em;
 }
 
 .results .topic-pill {
+  color: var(--ns-black);
   font-size: 0.8em;
   padding-block: 0.1em;
   padding-inline: 0.4em;

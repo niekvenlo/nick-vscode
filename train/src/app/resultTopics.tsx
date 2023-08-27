@@ -12,7 +12,7 @@ export default function Topics({ topics }: { topics: string[] }) {
   if (topics.length < 1) {
     return <span className="no-topic">none</span>;
   }
-  return topics.map((topic) => (
+  return topics.slice(0, 4).map((topic) => (
     <span
       key={topic}
       className="topic-pill"

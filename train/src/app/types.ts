@@ -8,5 +8,5 @@ export type Item = {
   forks: number;
   language: string;
   watchers_count: number;
-  url: string;
+  html_url: string;
 };
