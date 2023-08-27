@@ -1,0 +1,45 @@
+:root {
+  --ns-yellow: rgb(255, 201, 23);
+  --ns-blue: rgb(0, 48, 130);
+  --ns-light-blue: rgb(0, 99, 211);
+  --ns-black: rgb(0, 0, 0);
+  --ns-white: rgb(255, 255, 255);
+
+  --background: var(--ns-yellow);
+  --highlight: var(--ns-blue);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--ns-blue);
+    --highlight: var(--ns-yellow);
+  }
+  html {
+    color-scheme: dark;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--background);
+}
+
+h2 {
+  color: var(--highlight);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
